@@ -172,3 +172,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# nextjs
+node_modules
+.env
+package-lock.json
