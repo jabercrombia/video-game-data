@@ -65,4 +65,3 @@ myproject/
 - Deploy to production (Vercel for Next.js, Docker for FastAPI)
 
 Feel free to contribute and enhance the project!
-
