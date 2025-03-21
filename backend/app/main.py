@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-# from routes import films
-from app.routes import films
+
+from app.routes import allsales
+from app.routes import platform
 
 app = FastAPI()
 
@@ -13,7 +14,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(films.router, prefix="/api", tags=["films"])
+app.include_router(allsales.router, prefix="/api", tags=["allsales"])
+app.include_router(platform.router, prefix="/api", tags=["platform"])
 
 @app.get("/")
 def read_root():

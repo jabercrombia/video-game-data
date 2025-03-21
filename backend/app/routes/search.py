@@ -4,19 +4,20 @@ from db import get_db_connection
 router = APIRouter()
 
 # return all films
-@router.get("/films/")
-def get_films():
+@router.get("/artist/{artist_name}")
+def get_artist(artist_name: str):
     conn = get_db_connection()
     if not conn:
         raise HTTPException(status_code=500, detail="Database connection failed")
 
+
     cursor = conn.cursor()
-    cursor.execute("select * from grammys")
+    cursor.execute("SELECT artist, category, song_or_album, year FROM grammys WHERE artist ILIKE %s", ('%' + artist_name + '%',))
     rows = cursor.fetchall()
     cursor.close()
     conn.close()
 
     # Convert to list of dicts
-    films = [{"year": row[0]} for row in rows]
+    artist = [{"artist": row[0], "category" : row[1], "song_or_album" : row[2], "year" : row[3] } for row in rows]
 
-    return {"films": films}
+    return artist
