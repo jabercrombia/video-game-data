@@ -19,6 +19,8 @@ export default async function PlatformPage({ params }: { params: PlatformPagePar
     id: string;
     name: string;
     year: number;
+    na_sales: string;
+    eu_sales: string;
   }
 
   interface PlatformData {
