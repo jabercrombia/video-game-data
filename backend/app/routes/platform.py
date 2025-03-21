@@ -12,41 +12,37 @@ def get_platform(name: str):
 
 
     cursor = conn.cursor()
-    try:
-        cursor.execute("""
-                SELECT 
-                    name, 
-                    platform, 
-                    CAST(regexp_replace(year, '\..*$', '') AS TEXT) AS year, 
-                    publisher, 
-                    na_sales, 
-                    eu_sales, 
-                    jp_sales, 
-                    other_sales, 
-                    global_sales 
-                FROM vgsales WHERE name = %s
-            """,(name,))
-        rows = cursor.fetchall()
 
-        nested_sales = []
+    cursor.execute("""
+            SELECT v.rank, v.name, v.platform, p.alias_name, v.year, v.genre, v.publisher, v.na_sales, v.eu_sales, v.jp_sales, v.other_sales, v.global_sales
+            FROM vgsales v
+            JOIN platform_aliases p ON v.platform = p.platform_name WHERE LOWER(p.alias_name) = LOWER(%s) LIMIT 10;
+        """,(name,))
+    rows = cursor.fetchall()
+    cursor.close()
+    conn.close()
 
-        for row in rows:
-            game_data = {
-                "name": row[0],  # Fixed indexing
-                "platform": row[1],
-                "year": row[2],
-                "publisher": row[3],
-                "sales": {
-                    "na_sales": row[4],
-                    "eu_sales": row[5],
-                    "jp_sales": row[6],
-                    "other_sales": row[7],  # Added missing field
-                    "global_sales": row[8]  # Included global sales
-                }
+    nested_sales = []
+
+    for row in rows:
+        game_data = {
+            "id": row[0],
+            "name": row[1],  # Fixed indexing
+            "platform": row[2],
+            "year": row[4],
+            "genre" : row[5],
+            "publisher": row[6],
+            "sales": {
+                "na_sales": row[7],
+                "eu_sales": row[8],
+                "jp_sales": row[9],
+                "other_sales": row[10],  # Added missing field
+                "global_sales": row[11]  # Included global sales
             }
-            nested_sales.append(game_data)  # Moved inside the loop
+        }
+        nested_sales.append(game_data)  # Moved inside the loop
 
-        return nested_sales  # Returns the correctly formatted list
-    finally:
-        cursor.close()
-        conn.close()
+    return nested_sales  # Returns the correctly formatted list
+    # platform = [{"id": row[0], "name": row[1], "platform" : row[2], "year" : row[4], "genre" : row[5], "publisher": row[6]} for row in rows]
+
+    # return platform
