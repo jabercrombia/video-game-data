@@ -1,5 +1,5 @@
 # FastAPI & Next.js Project
-
+![dashboard](/public/thumbnail.png)
 ## Overview
 This project integrates **FastAPI** (backend) with **Next.js** (frontend). FastAPI serves as the API layer, while Next.js provides the user interface.
 
