@@ -11,7 +11,6 @@ def get_allsales():
     if not conn:
         raise HTTPException(status_code=500, detail="Database connection failed")
 
-
     cursor = conn.cursor()
     cursor.execute("""
             SELECT 
