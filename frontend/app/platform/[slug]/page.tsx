@@ -25,7 +25,6 @@ export default async function PlatformPage({ params }: PlatformPageProps) {
   }
 
   const data = await res.json();
-
   const dataTopGames = await topGames.json();
 
   return (
