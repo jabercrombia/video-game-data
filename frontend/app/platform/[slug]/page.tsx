@@ -1,13 +1,11 @@
-import { Metadata } from "next";
-
-interface PlatformPageParams {
-  slug: string;
-}
-
-interface PlatformPageProps {
-  params: PlatformPageParams;
-}
-
-export default function PlatformPage({ params }: PlatformPageProps) {
-  return <div>Slug: {params.slug}</div>;
+export default async function PostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  return (
+    <>
+    {params.slug}
+    </>
+  )
 }
