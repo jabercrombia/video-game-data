@@ -37,9 +37,9 @@ export default async function PlatformPage({ params }: { params: PlatformPagePar
     games: Game[];
   }
 
-  const data: PlatformData = await res.json();
+  const data = await res.json();
 
-  const dataTopGames: PlatformData = await topGames.json();
+  const dataTopGames = await topGames.json();
 
   return (
     <div className="w-full mx-auto px-[30px]">
