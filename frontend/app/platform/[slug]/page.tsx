@@ -1,8 +1,8 @@
-export default async function PostPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const slug = await params?.slug;
-  return <div>Slug: {slug}</div>; // ✅ No need for await
+import { Metadata } from 'next'; // Ensure this is the correct library for Metadata
+
+export async function generateMetadata({ params }: { params: Promise<{slug: string}>}): Promise<Metadata> {
+  const { slug } = await params;
+  return {
+    title: `Slug: ${slug}`
+  }; // Return a valid Metadata object
 }
