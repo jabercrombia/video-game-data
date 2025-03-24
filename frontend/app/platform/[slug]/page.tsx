@@ -10,22 +10,23 @@ export default async function PlatformPage({ params }: { params: PlatformPagePar
   const { slug } = params; // Extract slug from URL params
 
   // Fetch data from your API
-  const res = await fetch(`http://localhost:3000/api/platform/${slug}?include=name,na_sales,eu_sales,global_sales,other_sales,jp_sales,genre,publisher&query=global_sales&order=DESC`);
+  const data = await fetch(`http://localhost:3000/api/platform/${slug}?include=name,na_sales,eu_sales,global_sales,other_sales,jp_sales,genre,publisher&query=global_sales&order=DESC`).then((res) => res.json());
   
-  if (!res.ok) {
+  //const data = await fetch(`https://api.example.com/platform/${params.slug}`).then((res) => res.json());
+  if (!data.ok) {
     return <h1>Error: Failed to fetch data</h1>;
   }
 
   // Fetch data from your API
-  const topGames = await fetch(`http://localhost:3000/api/platform/${slug}?include=name,na_sales,eu_sales,global_sales,other_sales,jp_sales&query=global_sales&order=DESC`);
+  const topGames = await fetch(`http://localhost:3000/api/platform/${slug}?include=name,na_sales,eu_sales,global_sales,other_sales,jp_sales&query=global_sales&order=DESC`).then((res) => res.json());
   
   if (!topGames.ok) {
     return <h1>Error: Failed to fetch data</h1>;
   }
 
-  const data = await res.json();
+  //const data = await res.json();
 
-  const dataTopGames = await topGames.json();
+  //const dataTopGames = await topGames.json();
 
   return (
     <div className="w-full mx-auto px-[30px]">
@@ -36,7 +37,7 @@ export default async function PlatformPage({ params }: { params: PlatformPagePar
         
         <div className="flex"> 
           <div className="w-3/4">
-            <ChartBar data={dataTopGames}/>
+            <ChartBar data={topGames}/>
           </div>
           
 
