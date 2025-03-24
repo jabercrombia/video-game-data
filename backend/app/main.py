@@ -6,13 +6,13 @@ from app.routes import platform
 
 app = FastAPI()
 
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=["http://localhost:3000","https://video-game-data-set.vercel.app"],  # Allow frontend to access API
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow frontend to access API
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(allsales.router, prefix="/api", tags=["allsales"])
 app.include_router(platform.router, prefix="/api", tags=["platform"])

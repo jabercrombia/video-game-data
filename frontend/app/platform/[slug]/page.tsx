@@ -11,14 +11,14 @@ export default async function PlatformPage({ params }: PlatformPageProps) {
   
 
   // Fetch data from your API
-  const res = await fetch(`${process.env.API_URL}/api/platform/${slug}?include=name,na_sales,eu_sales,global_sales,other_sales,jp_sales,genre,publisher&query=global_sales&order=DESC`);
+  const res = await fetch(`${process.env.API_URL_FRONT}/api/platform/${slug}?include=name,na_sales,eu_sales,global_sales,other_sales,jp_sales,genre,publisher&query=global_sales&order=DESC`);
   
   if (!res.ok) {
     return <h1>Error: Failed to fetch data</h1>;
   }
 
   // Fetch data from your API
-  const topGames = await fetch(`${process.env.API_URL}/api/platform/${slug}?include=name,na_sales,eu_sales,global_sales,other_sales,jp_sales&query=global_sales&order=DESC`);
+  const topGames = await fetch(`${process.env.API_URL_FRONT}/api/platform/${slug}?include=name,na_sales,eu_sales,global_sales,other_sales,jp_sales&query=global_sales&order=DESC`);
   
   if (!topGames.ok) {
     return <h1>Error: Failed to fetch data</h1>;
