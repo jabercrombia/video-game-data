@@ -23,16 +23,6 @@ export default async function PlatformPage({ params }: { params: PlatformPagePar
     return <h1>Error: Failed to fetch data</h1>;
   }
 
-  interface Game {
-    id: string;
-    name: string;
-    year: number;
-    na_sales: string;
-    eu_sales: string;
-    jp_sales: string;
-    global_sales: string;
-  }
-
   const data = await res.json();
 
   const dataTopGames = await topGames.json();
