@@ -39,15 +39,10 @@ export default async function PlatformPage({ params }: PlatformPageProps) {
           <div className="w-3/4">
             <ChartBar data={dataTopGames}/>
           </div>
-          
-
           <div className="w-1/4">
             <Pie />
           </div>
         </div>
-
-  
-      
     </div>
   );
 }
