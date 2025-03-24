@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Header from "./components/header";
-import Footer from "./components/footer";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "./components/app-sidebar"
