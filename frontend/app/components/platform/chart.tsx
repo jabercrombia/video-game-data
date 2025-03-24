@@ -37,7 +37,8 @@ const chartConfig = {
 } satisfies ChartConfig
 
 export default function Chart({ data }: ChartProps) {
-    console.log(data);
+
+  
   return (
     <Card>
     <CardHeader>
