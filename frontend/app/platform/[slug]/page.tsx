@@ -1,11 +1,3 @@
-export default async function PostPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  return (
-    <>
-    {params.slug}
-    </>
-  )
+export default function PlatformPage({ params }: { params: { slug: string } }) {
+  return <div>Slug: {params.slug}</div>; // ✅ No need for await
 }
