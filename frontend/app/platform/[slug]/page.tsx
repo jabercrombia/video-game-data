@@ -33,10 +33,6 @@ export default async function PlatformPage({ params }: { params: PlatformPagePar
     global_sales: string;
   }
 
-  interface PlatformData {
-    games: Game[];
-  }
-
   const data = await res.json();
 
   const dataTopGames = await topGames.json();
