@@ -57,7 +57,8 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div>
+    <div className="px-[10px] border-md border-solid">
+      <h2 className="text-xl">All Sales</h2>
     <div className="flex items-center py-4">
         <Input
           placeholder="Filter names..."

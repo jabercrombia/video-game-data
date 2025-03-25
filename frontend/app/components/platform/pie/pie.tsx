@@ -1,9 +1,10 @@
 "use client"
 
 import React from "react"
-import { TrendingUp } from "lucide-react"
 import { Label, Pie, PieChart, Sector } from "recharts"
 import { PieSectorDataItem } from "recharts/types/polar/Pie"
+import { formatNumber } from "../../../utils/formatNumber"
+import { getColorByIndex } from "../../../utils/colors"
 
 import {
   Card,
@@ -58,32 +59,23 @@ interface PieProps {
   data: { genre: string; total_sales: number }[];
 }
 
-const colors = 
-[
-  'oklch(0.872 0.01 258.338)', // gray-300
-  'oklch(0.869 0.022 252.894)', // slate-300
-  'oklch(0.554 0.046 257.417)', // slate-500
-  'oklch(0.372 0.044 257.287)', // slate-700
-  'oklch(0.279 0.041 260.031)', // slate-800
-];
+
 
 export default function Component({ data }: PieProps) {
 
-  const totalSales = React.useMemo(() => {
-    return data.reduce((acc, curr) => acc + curr.total_sales, 0)
-  }, [])
+    const totalSales = React.useMemo(() => {
+      return formatNumber(data.reduce((acc, curr) => acc + curr.total_sales, 0))
+    }, [])
 
   const updatedData = {
     data: data.map((item, index:number) => ({
       ...item,
-      fill: colors[index]
+      fill: getColorByIndex(index)
     }))
   };
 
-  console.log(updatedData.data);
-
   return (
-    <Card className="flex flex-col border-none shadow-none py-0 gap-0 pt-[15px]">
+    <Card className="flex flex-col shadow-none py-0 gap-0 pt-[15px]">
       <CardHeader className="items-center pb-0">
         <CardTitle className="text-center">Top Global Sales</CardTitle>
         <CardDescription className="text-center">By Top 5 Genre</CardDescription>

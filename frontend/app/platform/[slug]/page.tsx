@@ -1,7 +1,6 @@
 import { columns } from "../../components/platform/columns"
 import { DataTable } from "../../components/platform/table"
 import ChartBar from "../../components/platform/chart"
-import Pie from "../../components/platform/pie"
 interface PlatformPageProps {
   params: Promise<{ slug: string }>;
 }
