@@ -1,7 +1,6 @@
 "use client"
 
 import React from "react"
-import { TrendingUp } from "lucide-react"
 import { Label, Pie, PieChart, Sector } from "recharts"
 import { PieSectorDataItem } from "recharts/types/polar/Pie"
 
@@ -19,13 +18,6 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
-const chartData = [
-  { browser: "chrome", visitors: 275, fill: "blue" },
-  { browser: "safari", visitors: 200, fill: "cyan" },
-  { browser: "firefox", visitors: 187, fill: "lightblue" },
-  { browser: "edge", visitors: 173, fill: "skyblue" },
-  { browser: "other", visitors: 90, fill: "var(--color-other)" },
-]
 
 
 const chartConfig = {
@@ -73,14 +65,14 @@ export default function Component({ data }: PieProps) {
     return data.reduce((acc, curr) => acc + curr.total_sales, 0)
   }, [])
 
+  console.log(totalSales);
+
   const updatedData = {
     data: data.map((item, index:number) => ({
       ...item,
       fill: colors[index]
     }))
   };
-
-  console.log(updatedData.data);
 
   return (
     <Card className="flex flex-col border-none shadow-none py-0 gap-0 pt-[15px]">

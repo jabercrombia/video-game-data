@@ -40,7 +40,7 @@ export default function Chart({ data }: ChartProps) {
 
   
   return (
-    <Card>
+    <Card className="border-none shadow-none">
     <CardHeader>
       <CardTitle>Highest Grossing Games</CardTitle>
       <CardDescription>in Millions</CardDescription>

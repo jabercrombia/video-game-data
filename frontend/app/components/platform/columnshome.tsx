@@ -34,7 +34,6 @@ export const columns: ColumnDef<Platform>[] = [
   {
     accessorKey: "publisher",
     header: "Publisher",
-    size: 200,
   },
   {
     accessorKey: "sales.na_sales",
@@ -49,10 +48,6 @@ export const columns: ColumnDef<Platform>[] = [
         </Button>
       )
     },
-  },
-  {
-    accessorKey: "sales.jp_sales",
-    header: "JP Sales",
   },
   {
     accessorKey: "sales.eu_sales",
