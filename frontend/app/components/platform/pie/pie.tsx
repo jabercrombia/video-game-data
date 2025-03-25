@@ -20,14 +20,6 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
-const chartData = [
-  { browser: "chrome", visitors: 275, fill: "blue" },
-  { browser: "safari", visitors: 200, fill: "cyan" },
-  { browser: "firefox", visitors: 187, fill: "lightblue" },
-  { browser: "edge", visitors: 173, fill: "skyblue" },
-  { browser: "other", visitors: 90, fill: "var(--color-other)" },
-]
-
 
 const chartConfig = {
   visitors: {
