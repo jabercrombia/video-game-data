@@ -25,7 +25,7 @@ export default async function PlatformPage({ params }: PlatformPageProps) {
 
   const data = await res.json();
   const dataTopGames = await topGames.json();
-console.log(dataTopGames);
+
   return (
     <div className="w-full mx-auto px-[30px]">
       <h1 className="uppercase text-3xl">{slug} Sales</h1>
