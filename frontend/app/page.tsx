@@ -4,13 +4,8 @@ import Pie from "./components/platform/pie/pie"
 import PiePublisher from "./components/platform/pie/piepublisher"
 import PiePlatform from "./components/platform/pie/pieplatform"
 import Yearly from "./components/platform/line/lineyearly"
-interface PlatformPageProps {
-  params: Promise<{ slug: string }>;
-}
 
-export default async function PlatformPage({ params }: PlatformPageProps) {
-  const { slug } = await params;
-  
+export default async function PlatformPage() {
 
   // Fetch data from your API
   const res = await fetch(`${process.env.API_URL}/api/highest/genre`);
