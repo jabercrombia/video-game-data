@@ -1,5 +1,7 @@
 "use client"
 import { Bar, BarChart, XAxis, YAxis } from "recharts"
+import { getColorByIndex } from "../../utils/colors"
+
 import {
   Card,
   CardContent,
@@ -24,15 +26,15 @@ interface ChartProps {
 const chartConfig = {
   global_sales: {
     label: "Global Sales",
-    color: "orange",
+    color: getColorByIndex(0),
   },
   na_sales: {
-    label: "Mobile",
-    color: "blue",
+    label: "NA Sales",
+    color: getColorByIndex(1),
   },
   eu_sales: {
-    label: "Mobile",
-    color: "light-green",
+    label: "Eu Sales",
+    color: getColorByIndex(2),
   },
 } satisfies ChartConfig
 
@@ -40,10 +42,10 @@ export default function Chart({ data }: ChartProps) {
 
   
   return (
-    <Card className="border-none shadow-none">
+    <Card className="border-none shadow-none w-full">
     <CardHeader>
       <CardTitle>Highest Grossing Games</CardTitle>
-      <CardDescription>in Millions</CardDescription>
+      <CardDescription>in Millions by Region</CardDescription>
     </CardHeader>
     <CardContent>
       <ChartContainer config={chartConfig}>
@@ -58,17 +60,17 @@ export default function Chart({ data }: ChartProps) {
             dataKey="name"
             type="category"
             tickLine={false}
-            tickMargin={10}
+            tickMargin={20}
             axisLine={false}   
-            tick={{ fontSize: 12 }} // Allow wrapping
+            tick={{ fontSize: 12 }}
             tickFormatter={(value) => value.slice(0, 20)}
           />
           <ChartTooltip
             cursor={false}
             content={<ChartTooltipContent hideLabel />}
           />
-          <Bar dataKey="global_sales" fill="var(--color-global_sales)" radius={5} />
-          <Bar dataKey="na_sales" fill="var(--color-na_sales)" radius={5} />
+          <Bar dataKey="global_sales" fill={getColorByIndex(3)} radius={5} />
+         
         </BarChart>
       </ChartContainer>
     </CardContent>

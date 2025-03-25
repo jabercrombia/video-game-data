@@ -70,8 +70,8 @@ export default function Component({ data }: PieProps) {
   return (
     <Card className="flex flex-col shadow-none py-0 gap-0 pt-[15px]">
       <CardHeader className="items-center pb-0">
-        <CardTitle className="text-center">Top Global Sales</CardTitle>
-        <CardDescription className="text-center">By Top 5 Publishers</CardDescription>
+        <CardTitle className="text-center">Top Publishers</CardTitle>
+        <CardDescription className="text-center">In Global Sales</CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer

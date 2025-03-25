@@ -4,7 +4,7 @@ import * as React from "react"
 import { TrendingUp } from "lucide-react"
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts"
 import { getColorByIndex} from "../../../utils/colors"
-import { formatNumber} from "../../../utils/formatNumber"
+import { formatNumber } from "../../../utils/formatNumber"
 
 import {
   Card,
@@ -75,7 +75,7 @@ export default function Component({ data }: LineProps) {
         <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
           <CardTitle>Sales By Region</CardTitle>
           <CardDescription>
-            Showing total sales in million by Region
+            Showing total sales in Millions by Region
           </CardDescription>
         </div>
         <div className="flex">
