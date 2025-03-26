@@ -19,8 +19,6 @@ import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
-  ChartLegend,
-  ChartLegendContent,
   ChartTooltipContent,
 } from "@/components/ui/chart"
 

@@ -3,7 +3,6 @@
 import React from "react"
 import { Label, Pie, PieChart, Sector } from "recharts"
 import { PieSectorDataItem } from "recharts/types/polar/Pie"
-import { formatNumber } from "../../../utils/formatNumber"
 import { getColorByIndex } from "../../../utils/colors"
 
 import {
