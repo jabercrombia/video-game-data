@@ -24,7 +24,7 @@ export const metadata = {
   authors: [{ name: 'Justin Abercrombia', url: 'http://www.github.com/jabercrombia' }],
   creator: 'Justin Abercrombia',
   openGraph: {
-    images: '/public/thumbnail.png',
+    images: '/thumbnail.png',
   },
 };
 
