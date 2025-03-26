@@ -6,7 +6,7 @@ import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 
 export const metadata = {
-  title: `jabercrombia`,
+  title: `Video Game Sales`,
   description: `Next.js dashboard powered by FastAPI for sales data visualization. Fetch, analyze, and display real-time sales insights with a modern full-stack setup!`,
   keywords: [
     "Next.js FastAPI dashboard",
