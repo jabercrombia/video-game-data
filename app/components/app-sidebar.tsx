@@ -76,7 +76,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <SidebarMenuItem key={subItem.title}>
                   <SidebarMenuButton asChild>
                     <a href={subItem.url}>
-                    <Image src={`/icons/${subItem.title}.svg`} alt={`${subItem.title} icon`} width={20} height={20} className="inline" />
+                    <Image src={`/icons/${subItem.title.toLocaleLowerCase()}.svg`} alt={`${subItem.title} icon`} width={20} height={20} className="inline" />
                     {subItem.title}
                     </a>
                   </SidebarMenuButton>
