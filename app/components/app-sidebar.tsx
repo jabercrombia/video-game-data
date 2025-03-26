@@ -1,6 +1,6 @@
 import * as React from "react"
 import Link from "next/link"
-import { SearchForm } from "./search-form"
+import { Home } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -49,13 +49,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props} className="h-screen flex flex-col">
   <SidebarHeader>
-    <SearchForm />
     <SidebarMenu>
       {/* Render the Home link at the top */}
       <SidebarMenuItem>
         <SidebarMenuButton asChild>
           <Link href="/" className="flex items-center gap-2">
-            Home
+          <Home /> Home
           </Link>
         </SidebarMenuButton>
       </SidebarMenuItem>

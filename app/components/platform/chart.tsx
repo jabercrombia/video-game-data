@@ -60,7 +60,7 @@ export default function Chart({ data }: ChartProps) {
             dataKey="name"
             type="category"
             tickLine={false}
-            tickMargin={20}
+            tickMargin={5}
             axisLine={false}   
             tick={{ fontSize: 12 }}
             tickFormatter={(value) => value.slice(0, 20)}
@@ -70,14 +70,8 @@ export default function Chart({ data }: ChartProps) {
             content={<ChartTooltipContent hideLabel />}
           />
           <Bar dataKey="global_sales" fill={getColorByIndex(3)} radius={5} />
-         
         </BarChart>
       </ChartContainer>
     </CardContent>
-    <CardFooter className="flex-col items-start gap-2 text-sm">
-      <div className="leading-none text-muted-foreground">
-        Showing sales for the platform
-      </div>
-    </CardFooter>
   </Card>  )
 }
