@@ -28,6 +28,9 @@ myproject/
 - The dashboard fetches sales data from the external FastAPI service: [Video Game Sales API](https://github.com/jabercrombia/video-game-sales-api).
 - The API repository is available at: [GitHub - Video Game Sales API](https://github.com/jabercrombia/video-game-sales-api).
 - Uses `fetch` or Axios to retrieve and display real-time sales insights.
+##Technologies Used
+-ShadCN: Provides pre-styled and accessible UI components for seamless integration.
+-Tailwind CSS: Enables rapid styling and responsive design for the dashboard.
 
 ## Future Improvements
 - Enhance UI with interactive charts and filters
