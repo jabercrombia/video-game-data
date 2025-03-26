@@ -4,6 +4,15 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
 import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
+import {
   ColumnDef,
   SortingState,
   ColumnFiltersState,
@@ -54,7 +63,11 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div>
+    <Card className="border-none shadow-none">
+      <CardHeader className="pl-[0px] mb-[0px]">
+        <CardTitle>All Games</CardTitle>
+        <CardDescription></CardDescription>
+      </CardHeader>
     <div className="flex items-center py-4">
         <Input
           placeholder="Filter names..."
@@ -127,6 +140,6 @@ export function DataTable<TData, TValue>({
       Next
     </Button>
   </div>
-  </div>
+  </Card>
   )
 }

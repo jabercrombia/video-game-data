@@ -1,11 +1,10 @@
 "use client"
-import React from 'react';
-import { formatNumber } from "../../../utils/formatNumber"
-import { getColorByIndex } from "../../../utils/colors"
 
-// import React from "react"
+import React from "react"
 import { Label, Pie, PieChart, Sector } from "recharts"
 import { PieSectorDataItem } from "recharts/types/polar/Pie"
+import { formatNumber } from "../../../utils/formatNumber"
+import { getColorByIndex } from "../../../utils/colors"
 
 import {
   Card,
@@ -19,28 +18,31 @@ import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
-  ChartLegend,
-  ChartLegendContent,
   ChartTooltipContent,
 } from "@/components/ui/chart"
 
-
 const chartConfig = {
-  Nintendo: {
-    label: "Nintendo",
+  action: {
+    label: "Action",
   },
-  Electronic_Arts: {
-    label: "Electronic Arts",
+  sports: {
+    label: "Sports",
   },
-  Sony_Computer_Entertainment: {
-    label: "Sony",
+  safari: {
+    label: "Safari",
+    color: "hsl(var(--chart-2))",
   },
-  Take_Two_Interactive: {
-    label: "Take Two",
+  firefox: {
+    label: "Firefox",
     color: "hsl(var(--chart-3))",
   },
-  Activision: {
-    label: "Activision",
+  edge: {
+    label: "Edge",
+    color: "hsl(var(--chart-4))",
+  },
+  other: {
+    label: "Other",
+    color: "hsl(var(--chart-5))",
   },
 } satisfies ChartConfig
 
@@ -49,25 +51,25 @@ interface PieProps {
 }
 
 
+
 export default function Component({ data }: PieProps) {
 
-  console.log(data);
-  const totalSales = React.useMemo(() => {
-    return formatNumber(data.reduce((acc, curr) => acc + curr.total_sales, 0))
-  }, [])
+    const totalSales = React.useMemo(() => {
+      console.log(data);
+      return data.reduce((acc, curr) => acc + curr.total_sales, 0)
+    }, [])
 
   const updatedData = {
-    data: data.map((item, index: number) => ({
+    data: data.map((item, index:number) => ({
       ...item,
-      fill: getColorByIndex(index),
-      convertedSales: formatNumber(item.total_sales)
+      fill: getColorByIndex(index)
     }))
   };
-console.log(updatedData);
+
   return (
-    <Card className="flex flex-col shadow-none py-0 gap-0 pt-[15px]">
+    <Card className="flex flex-col shadow-none border-none py-0 gap-0 pt-[15px]">
       <CardHeader className="items-center pb-0">
-        <CardTitle className="text-center">Top Publishers</CardTitle>
+        <CardTitle className="text-center">Top Genre</CardTitle>
         <CardDescription className="text-center">In Global Sales</CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
@@ -83,7 +85,7 @@ console.log(updatedData);
             <Pie
               data={updatedData.data}
               dataKey="total_sales"
-              nameKey="publisher"
+              nameKey="genre"
               innerRadius={60}
               strokeWidth={5}
               activeIndex={0}
@@ -124,7 +126,6 @@ console.log(updatedData);
                 }}
               />
               </Pie>
-             
           </PieChart>
         </ChartContainer>
       </CardContent>

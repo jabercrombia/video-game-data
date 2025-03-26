@@ -1,17 +1,18 @@
 "use client"
-import { Bar, BarChart, XAxis, YAxis } from "recharts"
+import { Bar, BarChart, XAxis, YAxis, LabelList } from "recharts"
 import { getColorByIndex } from "../../utils/colors"
 
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
 import {
   ChartConfig,
+  ChartLegend,
+  ChartLegendContent,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
@@ -26,15 +27,12 @@ interface ChartProps {
 const chartConfig = {
   global_sales: {
     label: "Global Sales",
-    color: getColorByIndex(0),
   },
   na_sales: {
     label: "NA Sales",
-    color: getColorByIndex(1),
   },
   eu_sales: {
     label: "Eu Sales",
-    color: getColorByIndex(2),
   },
 } satisfies ChartConfig
 
@@ -42,12 +40,12 @@ export default function Chart({ data }: ChartProps) {
 
   
   return (
-    <Card className="border-none shadow-none w-full">
-    <CardHeader>
+    <Card className="w-full border-none shadow-none">
+    <CardHeader className="pl-[0px]">
       <CardTitle>Highest Grossing Games</CardTitle>
       <CardDescription>in Millions by Region</CardDescription>
     </CardHeader>
-    <CardContent>
+    <CardContent className="pl-[0px] mt-[20px]">
       <ChartContainer config={chartConfig}>
         <BarChart
           accessibilityLayer
@@ -69,7 +67,32 @@ export default function Chart({ data }: ChartProps) {
             cursor={false}
             content={<ChartTooltipContent hideLabel />}
           />
-          <Bar dataKey="global_sales" fill={getColorByIndex(3)} radius={5} />
+          <ChartLegend content={<ChartLegendContent />} />
+          <Bar dataKey="global_sales" fill={getColorByIndex(1)} radius={2}>
+            <LabelList
+                dataKey="global_sales"
+                position="right"
+                offset={8}
+                className="fill-foreground"
+                fontSize={12}
+              />
+            <LabelList
+              dataKey="label"
+              position="insideLeft"
+              offset={8}
+              className="fill-[--color-label]"
+              fontSize={12}
+            />
+          </Bar>
+          <Bar dataKey="na_sales" fill={getColorByIndex(3)} radius={2}>
+          <LabelList
+                dataKey="na_sales"
+                position="right"
+                offset={8}
+                className="fill-foreground"
+                fontSize={12}
+              />
+          </Bar>
         </BarChart>
       </ChartContainer>
     </CardContent>

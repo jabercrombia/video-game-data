@@ -1,6 +1,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { Home } from "lucide-react"
+import Image from "next/image";
 import {
   Sidebar,
   SidebarContent,
@@ -34,7 +35,7 @@ const data = {
         {
           title: "Nintendo",
           url: "/platform/nintendo",
-          isActive: true,
+          // isActive: true,
         },
         {
           title: "Xbox",
@@ -73,8 +74,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenu>
               {item.items.map((subItem) => (
                 <SidebarMenuItem key={subItem.title}>
-                  <SidebarMenuButton asChild isActive={subItem.isActive}>
-                    <a href={subItem.url}>{subItem.title}</a>
+                  <SidebarMenuButton asChild>
+                    <a href={subItem.url}>
+                    <Image src={`/icons/${subItem.title}.svg`} alt={`${subItem.title} icon`} width={20} height={20} className="inline" />
+                    {subItem.title}
+                    </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

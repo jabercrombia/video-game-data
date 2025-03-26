@@ -14,7 +14,7 @@ const colors = [
   export function getRandomColor(): string {
     if (colors.length === 0) {
       console.error("No colors available in the array.");
-      return "#000"; // Default to black if no colors exist
+      return "#000";
     }
     return colors[Math.floor(Math.random() * colors.length)];
   }

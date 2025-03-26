@@ -19,31 +19,25 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
+  ChartLegend,
+  ChartLegendContent,
 } from "@/components/ui/chart"
 
 const chartConfig = {
-  visitors: {
-    label: "Visitors",
+  Action: {
+    label: "Action",
   },
-  chrome: {
-    label: "Chrome",
-    color: "hsl(var(--chart-1))",
+  Sports: {
+    label: "Sports",
   },
-  safari: {
-    label: "Safari",
-    color: "hsl(var(--chart-2))",
+  Shooter: {
+    label: "Shooter",
   },
-  firefox: {
-    label: "Firefox",
-    color: "hsl(var(--chart-3))",
+  Platform: {
+    label: "Platform",
   },
-  edge: {
-    label: "Edge",
-    color: "hsl(var(--chart-4))",
-  },
-  other: {
-    label: "Other",
-    color: "hsl(var(--chart-5))",
+  Role_Playing: {
+    label: "Role Playing",
   },
 } satisfies ChartConfig
 
@@ -65,6 +59,7 @@ export default function Component({ data }: PieProps) {
       fill: getColorByIndex(index)
     }))
   };
+
 
   return (
     <Card className="flex flex-col shadow-none py-0 gap-0 pt-[15px]">
@@ -126,6 +121,8 @@ export default function Component({ data }: PieProps) {
                 }}
               />
               </Pie>
+              <ChartLegend content={<ChartLegendContent nameKey="genre" />}
+            />
           </PieChart>
         </ChartContainer>
       </CardContent>
