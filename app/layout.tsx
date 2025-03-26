@@ -7,12 +7,24 @@ import "./globals.css";
 
 export const metadata = {
   title: `jabercrombia`,
-  description: `This is a blog built with Next.js and .`,
-  keywords: ['Next.js', 'React', 'JavaScript'],
+  description: `Next.js dashboard powered by FastAPI for sales data visualization. Fetch, analyze, and display real-time sales insights with a modern full-stack setup!`,
+  keywords: [
+    "Next.js FastAPI dashboard",
+    "FastAPI sales data API",
+    "Sales data visualization Next.js",
+    "Next.js analytics dashboard",
+    "FastAPI backend for data visualization",
+    "Full-stack sales analytics",
+    "Next.js fetch API from FastAPI",
+    "FastAPI sales insights",
+    "Interactive sales charts Next.js",
+    "Build a sales dashboard with Next.js"
+  ]
+  ,
   authors: [{ name: 'Justin Abercrombia', url: 'http://www.github.com/jabercrombia' }],
   creator: 'Justin Abercrombia',
   openGraph: {
-    images: '/frontend/public/thumbnail.png',
+    images: '/public/thumbnail.png',
   },
 };
 
