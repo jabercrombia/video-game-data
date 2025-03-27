@@ -68,7 +68,7 @@ export default function Component({ data }: LineProps) {
             Showing total sales in Millions by Region
           </CardDescription>
         </div>
-        <div className="flex">
+        <div className="xs:flex md:flex">
           {["na_sales","eu_sales","jp_sales", "other_sales"].map((key) => {
             const chart = key as keyof typeof chartConfig
             return (
