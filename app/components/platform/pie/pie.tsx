@@ -121,8 +121,9 @@ export default function Component({ data }: PieProps) {
                 }}
               />
               </Pie>
-              <ChartLegend content={<ChartLegendContent nameKey="genre" />}
-            />
+              <ChartLegend
+              content={<ChartLegendContent nameKey="genre" />}
+              className="md:hidden -translate-y-2 flex-wrap gap-2 [&>*]:basis-1/4 [&>*]:justify-center"/>
           </PieChart>
         </ChartContainer>
       </CardContent>

@@ -17,6 +17,8 @@ import {
 } from "@/components/ui/card"
 import {
   ChartConfig,
+  ChartLegend,
+  ChartLegendContent,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
@@ -122,7 +124,9 @@ console.log(updatedData);
                 }}
               />
               </Pie>
-             
+              <ChartLegend
+              content={<ChartLegendContent nameKey="publisher" />}
+              className="md:hidden -translate-y-2 flex-wrap gap-2 [&>*]:basis-1/4 [&>*]:justify-center"/>
           </PieChart>
         </ChartContainer>
       </CardContent>

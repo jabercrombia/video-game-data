@@ -51,14 +51,14 @@ export default async function PlatformPage() {
   return (
     <div className="w-full mx-auto px-[30px] home">
       <h1 className="capitalize text-xl">Top Video Game Sales</h1>
-      <div className="flex w-full">
-        <div className="w-1/3">
+      <div className="grid md:grid-cols-3 w-full">
+        <div>
           <Pie data={data} />
         </div>
-        <div className="w-1/3">
+        <div>
           <PiePublisher data={datapublisher} />
         </div>
-        <div className="w-1/3">
+        <div>
           <PiePlatform data={dataplatform} />
         </div>
       </div> 

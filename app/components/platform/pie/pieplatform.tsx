@@ -19,33 +19,27 @@ import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
+  ChartLegend,
+  ChartLegendContent,
   ChartTooltipContent,
 } from "@/components/ui/chart"
 
 
 const chartConfig = {
-  visitors: {
-    label: "Visitors",
+  PS2: {
+    label: "PS2",
   },
-  chrome: {
-    label: "Chrome",
-    color: "hsl(var(--chart-1))",
+  Wii: {
+    label: "Wii",
   },
-  safari: {
-    label: "Safari",
-    color: "hsl(var(--chart-2))",
+  X360: {
+    label: "X360",
   },
-  firefox: {
-    label: "Firefox",
-    color: "hsl(var(--chart-3))",
+  DS: {
+    label: "DS",
   },
-  edge: {
-    label: "Edge",
-    color: "hsl(var(--chart-4))",
-  },
-  other: {
-    label: "Other",
-    color: "hsl(var(--chart-5))",
+  PS3: {
+    label: "PS3",
   },
 } satisfies ChartConfig
 
@@ -127,6 +121,9 @@ export default function Component({ data }: PieProps) {
                 }}
               />
               </Pie>
+              <ChartLegend
+              content={<ChartLegendContent nameKey="platform" />}
+              className="md:hidden -translate-y-2 flex-wrap gap-2 [&>*]:basis-1/4 [&>*]:justify-center"/>
           </PieChart>
         </ChartContainer>
       </CardContent>
