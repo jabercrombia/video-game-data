@@ -4,6 +4,8 @@
 ## Overview
 This project is a **Next.js** dashboard that visualizes sales data by ingesting data from an external FastAPI service: [Video Game Sales API](https://github.com/jabercrombia/video-game-sales-api).
 
+You'll need to run the above repo and this repo to get it working on your local machine.
+
 ## Project Structure
 ```
 myproject/

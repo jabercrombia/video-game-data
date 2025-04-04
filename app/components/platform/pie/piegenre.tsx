@@ -54,7 +54,6 @@ interface PieProps {
 export default function Component({ data }: PieProps) {
 
     const totalSales = React.useMemo(() => {
-      console.log(data);
       return data.reduce((acc, curr) => acc + curr.total_sales, 0)
     }, [])
 

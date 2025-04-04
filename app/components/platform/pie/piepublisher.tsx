@@ -51,7 +51,6 @@ interface PieProps {
 
 export default function Component({ data }: PieProps) {
 
-  console.log(data);
   const totalSales = React.useMemo(() => {
     return formatNumber(data.reduce((acc, curr) => acc + curr.total_sales, 0))
   }, [])
@@ -63,7 +62,7 @@ export default function Component({ data }: PieProps) {
       convertedSales: formatNumber(item.total_sales)
     }))
   };
-console.log(updatedData);
+
   return (
     <Card className="flex flex-col shadow-none py-0 gap-0 pt-[15px]">
       <CardHeader className="items-center pb-0">

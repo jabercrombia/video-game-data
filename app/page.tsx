@@ -4,7 +4,7 @@ import Pie from "./components/platform/pie/pie"
 import PiePublisher from "./components/platform/pie/piepublisher"
 import PiePlatform from "./components/platform/pie/pieplatform"
 import Yearly from "./components/platform/line/lineyearly"
-
+import ScatterPlot from "./components/platform/scatterplot/scatterplotsales"
 export default async function PlatformPage() {
 
   // Fetch data from your API
@@ -61,7 +61,13 @@ export default async function PlatformPage() {
         <div>
           <PiePlatform data={dataplatform} />
         </div>
-      </div> 
+      </div>
+      <div className="w-full">
+        <div>
+        <ScatterPlot data={datayearly}/>
+        </div>
+
+      </div>
       <div className="w-full">
         <Yearly data={datayearly} />
         <DataTable columns={columns} data={dataallsales}/>
