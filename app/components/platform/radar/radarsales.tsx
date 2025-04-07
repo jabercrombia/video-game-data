@@ -47,12 +47,12 @@ export default function Component({ data }: RaderProps) {
               cursor={false}
               content={<ChartTooltipContent hideLabel />}
             />
-            <PolarGrid className="fill-[--color-desktop] opacity-20" />
+            <PolarGrid className={`${getRandomColor()} opacity-100`} />
             <PolarAngleAxis dataKey="platform" />
             <Radar
               dataKey="total_sales"
               fill={getRandomColor()}
-              fillOpacity={0.5}
+              fillOpacity={0.6}
             />
           </RadarChart>
         </ChartContainer>
